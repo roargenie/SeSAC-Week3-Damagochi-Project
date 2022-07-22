@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		F6460066288A7CEE00862165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6460065288A7CEE00862165 /* AppDelegate.swift */; };
 		F6460068288A7CEE00862165 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6460067288A7CEE00862165 /* SceneDelegate.swift */; };
-		F646006A288A7CEE00862165 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6460069288A7CEE00862165 /* ViewController.swift */; };
 		F646006D288A7CEE00862165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F646006B288A7CEE00862165 /* Main.storyboard */; };
 		F646006F288A7CEE00862165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F646006E288A7CEE00862165 /* Assets.xcassets */; };
 		F6460072288A7CEE00862165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6460070288A7CEE00862165 /* LaunchScreen.storyboard */; };
+		F646007A288A899400862165 /* ChoiceCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6460079288A899400862165 /* ChoiceCollectionViewController.swift */; };
+		F646007C288A89BC00862165 /* ChoicePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646007B288A89BC00862165 /* ChoicePopupViewController.swift */; };
+		F646007E288A8B2F00862165 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646007D288A8B2F00862165 /* MainViewController.swift */; };
+		F6460082288A8C3900862165 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6460081288A8C3900862165 /* SettingViewController.swift */; };
+		F6D1A393288A90EF0061399E /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = F6D1A392288A90EF0061399E /* TextFieldEffects */; };
+		F6D1A396288A92AB0061399E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6D1A395288A92AB0061399E /* IQKeyboardManagerSwift */; };
+		F6D1A398288A94B30061399E /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1A397288A94B30061399E /* SettingTableViewController.swift */; };
+		F6D1A39B288AA2DA0061399E /* DamagochiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1A39A288AA2DA0061399E /* DamagochiModel.swift */; };
+		F6D1A39D288ACC650061399E /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1A39C288ACC650061399E /* TextField+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F6460062288A7CEE00862165 /* SeSAC Week3 Damagochi Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC Week3 Damagochi Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6460065288A7CEE00862165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6460067288A7CEE00862165 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F6460069288A7CEE00862165 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F646006C288A7CEE00862165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F646006E288A7CEE00862165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6460071288A7CEE00862165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6460073288A7CEE00862165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6460079288A899400862165 /* ChoiceCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceCollectionViewController.swift; sourceTree = "<group>"; };
+		F646007B288A89BC00862165 /* ChoicePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicePopupViewController.swift; sourceTree = "<group>"; };
+		F646007D288A8B2F00862165 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F6460081288A8C3900862165 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		F6D1A397288A94B30061399E /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		F6D1A39A288AA2DA0061399E /* DamagochiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagochiModel.swift; sourceTree = "<group>"; };
+		F6D1A39C288ACC650061399E /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D1A393288A90EF0061399E /* TextFieldEffects in Frameworks */,
+				F6D1A396288A92AB0061399E /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +74,14 @@
 			children = (
 				F6460065288A7CEE00862165 /* AppDelegate.swift */,
 				F6460067288A7CEE00862165 /* SceneDelegate.swift */,
-				F6460069288A7CEE00862165 /* ViewController.swift */,
 				F646006B288A7CEE00862165 /* Main.storyboard */,
+				F6D1A39A288AA2DA0061399E /* DamagochiModel.swift */,
+				F646007D288A8B2F00862165 /* MainViewController.swift */,
+				F6D1A39C288ACC650061399E /* TextField+Extension.swift */,
+				F6D1A397288A94B30061399E /* SettingTableViewController.swift */,
+				F6460081288A8C3900862165 /* SettingViewController.swift */,
+				F6460079288A899400862165 /* ChoiceCollectionViewController.swift */,
+				F646007B288A89BC00862165 /* ChoicePopupViewController.swift */,
 				F646006E288A7CEE00862165 /* Assets.xcassets */,
 				F6460070288A7CEE00862165 /* LaunchScreen.storyboard */,
 				F6460073288A7CEE00862165 /* Info.plist */,
@@ -83,6 +105,10 @@
 			dependencies = (
 			);
 			name = "SeSAC Week3 Damagochi Project";
+			packageProductDependencies = (
+				F6D1A392288A90EF0061399E /* TextFieldEffects */,
+				F6D1A395288A92AB0061399E /* IQKeyboardManagerSwift */,
+			);
 			productName = "SeSAC Week3 Damagochi Project";
 			productReference = F6460062288A7CEE00862165 /* SeSAC Week3 Damagochi Project.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +137,10 @@
 				Base,
 			);
 			mainGroup = F6460059288A7CEE00862165;
+			packageReferences = (
+				F6D1A391288A90EF0061399E /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+				F6D1A394288A92AB0061399E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = F6460063288A7CEE00862165 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +168,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F646006A288A7CEE00862165 /* ViewController.swift in Sources */,
+				F6D1A39D288ACC650061399E /* TextField+Extension.swift in Sources */,
+				F6D1A398288A94B30061399E /* SettingTableViewController.swift in Sources */,
+				F646007A288A899400862165 /* ChoiceCollectionViewController.swift in Sources */,
 				F6460066288A7CEE00862165 /* AppDelegate.swift in Sources */,
+				F646007C288A89BC00862165 /* ChoicePopupViewController.swift in Sources */,
 				F6460068288A7CEE00862165 /* SceneDelegate.swift in Sources */,
+				F6D1A39B288AA2DA0061399E /* DamagochiModel.swift in Sources */,
+				F6460082288A8C3900862165 /* SettingViewController.swift in Sources */,
+				F646007E288A8B2F00862165 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +394,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F6D1A391288A90EF0061399E /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		F6D1A394288A92AB0061399E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F6D1A392288A90EF0061399E /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6D1A391288A90EF0061399E /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+		F6D1A395288A92AB0061399E /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6D1A394288A92AB0061399E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F646005A288A7CEE00862165 /* Project object */;
 }
