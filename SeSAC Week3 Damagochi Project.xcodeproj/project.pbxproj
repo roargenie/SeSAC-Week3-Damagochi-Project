@@ -21,6 +21,7 @@
 		F6D1A398288A94B30061399E /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1A397288A94B30061399E /* SettingTableViewController.swift */; };
 		F6D1A39B288AA2DA0061399E /* DamagochiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1A39A288AA2DA0061399E /* DamagochiModel.swift */; };
 		F6D1A39D288ACC650061399E /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1A39C288ACC650061399E /* TextField+Extension.swift */; };
+		F6D1A3A0288BD13C0061399E /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = F6D1A39F288BD13C0061399E /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D1A3A0288BD13C0061399E /* Toast in Frameworks */,
 				F6D1A393288A90EF0061399E /* TextFieldEffects in Frameworks */,
 				F6D1A396288A92AB0061399E /* IQKeyboardManagerSwift in Frameworks */,
 			);
@@ -108,6 +110,7 @@
 			packageProductDependencies = (
 				F6D1A392288A90EF0061399E /* TextFieldEffects */,
 				F6D1A395288A92AB0061399E /* IQKeyboardManagerSwift */,
+				F6D1A39F288BD13C0061399E /* Toast */,
 			);
 			productName = "SeSAC Week3 Damagochi Project";
 			productReference = F6460062288A7CEE00862165 /* SeSAC Week3 Damagochi Project.app */;
@@ -140,6 +143,7 @@
 			packageReferences = (
 				F6D1A391288A90EF0061399E /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				F6D1A394288A92AB0061399E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				F6D1A39E288BD13C0061399E /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = F6460063288A7CEE00862165 /* Products */;
 			projectDirPath = "";
@@ -412,6 +416,14 @@
 				version = 6.5.0;
 			};
 		};
+		F6D1A39E288BD13C0061399E /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -424,6 +436,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F6D1A394288A92AB0061399E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		F6D1A39F288BD13C0061399E /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6D1A39E288BD13C0061399E /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
