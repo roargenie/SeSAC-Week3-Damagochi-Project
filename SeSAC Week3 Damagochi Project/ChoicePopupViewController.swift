@@ -49,7 +49,7 @@ class ChoicePopupViewController: UIViewController {
         descriptionLabel.font = .systemFont(ofSize: 14)
         
         cancelButton.setTitleColor(UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1), for: .normal)
-        cancelButton.backgroundColor = .systemGray5
+        cancelButton.backgroundColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 0.1)
         cancelButton.titleLabel?.font = .boldSystemFont(ofSize: 15)
         cancelButton.tag = 0
         

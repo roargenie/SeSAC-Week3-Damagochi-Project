@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     var rice = Damagochi.rice
     var water = Damagochi.water
     
+    @IBOutlet weak var mainSubView: UIView!
     
     @IBOutlet weak var textImage: UIImageView!
     
@@ -36,22 +37,70 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        mainSubView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         self.title = "\(Damagochi.userName)님의 다마고치"
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)]
+
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(personButtonTapped))
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         
         
         riceTextField.delegate = self
         waterTextField.delegate = self
         
-
+        designUI()
         configureUI()
            
     }
     
+    func designUI() {
+        riceButton.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        riceButton.setTitleColor(UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1), for: .normal)
+        riceButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        riceButton.layer.cornerRadius = 10
+        riceButton.layer.borderWidth = 2
+        riceButton.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
+                
+        waterButton.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        waterButton.setTitleColor(UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1), for: .normal)
+        waterButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        waterButton.layer.cornerRadius = 10
+        waterButton.layer.borderWidth = 2
+        waterButton.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
+        
+        descriptionLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        descriptionLabel.font = .systemFont(ofSize: 14, weight: .heavy)
+        
+        damagochiNameLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        damagochiNameLabel.font = .systemFont(ofSize: 14, weight: .heavy)
+        damagochiNameLabel.layer.borderWidth = 1
+        damagochiNameLabel.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
+        damagochiNameLabel.layer.cornerRadius = 8
+        
+        textLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        textLabel.font = .boldSystemFont(ofSize: 14)
+        textLabel.numberOfLines = 0
+        
+        riceTextField.placeholder = "밥주세용"
+        riceTextField.textAlignment = .center
+        waterTextField.placeholder = "밥주세용"
+        waterTextField.textAlignment = .center
+         
+    }
+    
+    
+    
     @objc func personButtonTapped() {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: TestTableViewController.identifier) as? TestTableViewController else { return }
+        guard let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.identifier) as? SettingTableViewController else { return }
         
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -71,9 +120,9 @@ class MainViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         let result = ((Double(rice) / 5.0 + Double(water) / 2.0).rounded(.down)) / 10
         level = Int(result)
-        print(level)
+        
         switch sender.tag {
-            
+                    // 스위치문으로 level당 케이스 지정해서 열거하는게 더 정확할것 같음. 바꿔야 함.⭐️
         case 0:
             if riceTextField.text == nil {
                 rice += 1
@@ -92,14 +141,12 @@ class MainViewController: UIViewController {
                         descriptionLabel.text = "LV1 • 밥알\(rice)개 • 물방울\(water)개"
                     }
                 } else {
-                    //descriptionLabel.text = "LV\(Int(result)) • 밥알\(rice)개 • 물방울\(water)개"
+                    
                     view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
                 }
             }
         case 1:
-//            if waterTextField.text == nil {
-//                water += 1
-//            }
+
             if let waterCount = Int(waterTextField.text!) {
                 if waterCount < 50 {
                     water += waterCount
@@ -114,7 +161,7 @@ class MainViewController: UIViewController {
                         descriptionLabel.text = "LV1 • 밥알\(rice)개 • 물방울\(water)개"
                     }
                 } else {
-                    //descriptionLabel.text = "LV\(Int(result)) • 밥알\(rice)개 • 물방울\(water)개"
+                    
                     view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
                 }
             }
@@ -123,6 +170,24 @@ class MainViewController: UIViewController {
         }
 
     }
+    
+    override func viewDidLayoutSubviews() {
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0, y: riceTextField.frame.height - 2, width: riceTextField.frame.width, height: 2)
+        bottomLine.backgroundColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 0.3).cgColor
+        
+        riceTextField.borderStyle = .none
+        riceTextField.layer.addSublayer(bottomLine)
+        
+        let bottomLine2 = CALayer()
+        bottomLine2.frame = CGRect(x: 0, y: waterTextField.frame.height - 2, width: waterTextField.frame.width, height: 2)
+        bottomLine2.backgroundColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 0.3).cgColor
+
+        waterTextField.borderStyle = .none
+        waterTextField.layer.addSublayer(bottomLine2)
+    }
+    
+    
 
 }
 
@@ -143,3 +208,4 @@ extension MainViewController: UITextFieldDelegate {
     }
     
 }
+

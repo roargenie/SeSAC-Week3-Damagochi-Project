@@ -16,10 +16,10 @@
 		F646007C288A89BC00862165 /* ChoicePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646007B288A89BC00862165 /* ChoicePopupViewController.swift */; };
 		F646007E288A8B2F00862165 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646007D288A8B2F00862165 /* MainViewController.swift */; };
 		F6460082288A8C3900862165 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6460081288A8C3900862165 /* SettingViewController.swift */; };
-		F66E57E8288C2DDA00F45AA0 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E57E7288C2DDA00F45AA0 /* TestTableViewController.swift */; };
-		F66E57EA288C2FBF00F45AA0 /* SettingTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E57E9288C2FBF00F45AA0 /* SettingTableViewCell1.swift */; };
-		F66E57EC288C2FC700F45AA0 /* SettingTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E57EB288C2FC700F45AA0 /* SettingTableViewCell2.swift */; };
-		F66E57EE288C2FD000F45AA0 /* SettingTableViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E57ED288C2FD000F45AA0 /* SettingTableViewCell3.swift */; };
+		F66E57F0288C3B5F00F45AA0 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E57EF288C3B5F00F45AA0 /* SettingTableViewController.swift */; };
+		F66E57F2288C3C6B00F45AA0 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E57F1288C3C6B00F45AA0 /* SettingTableViewCell.swift */; };
+		F66E57F4288C416A00F45AA0 /* SettingTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E57F3288C416A00F45AA0 /* SettingTableViewCell2.swift */; };
+		F66E57F6288C417200F45AA0 /* SettingTableViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E57F5288C417200F45AA0 /* SettingTableViewCell3.swift */; };
 		F6D1A393288A90EF0061399E /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = F6D1A392288A90EF0061399E /* TextFieldEffects */; };
 		F6D1A396288A92AB0061399E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6D1A395288A92AB0061399E /* IQKeyboardManagerSwift */; };
 		F6D1A39B288AA2DA0061399E /* DamagochiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1A39A288AA2DA0061399E /* DamagochiModel.swift */; };
@@ -40,10 +40,10 @@
 		F646007B288A89BC00862165 /* ChoicePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicePopupViewController.swift; sourceTree = "<group>"; };
 		F646007D288A8B2F00862165 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F6460081288A8C3900862165 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		F66E57E7288C2DDA00F45AA0 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
-		F66E57E9288C2FBF00F45AA0 /* SettingTableViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell1.swift; sourceTree = "<group>"; };
-		F66E57EB288C2FC700F45AA0 /* SettingTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell2.swift; sourceTree = "<group>"; };
-		F66E57ED288C2FD000F45AA0 /* SettingTableViewCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell3.swift; sourceTree = "<group>"; };
+		F66E57EF288C3B5F00F45AA0 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		F66E57F1288C3C6B00F45AA0 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		F66E57F3288C416A00F45AA0 /* SettingTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell2.swift; sourceTree = "<group>"; };
+		F66E57F5288C417200F45AA0 /* SettingTableViewCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell3.swift; sourceTree = "<group>"; };
 		F6D1A39A288AA2DA0061399E /* DamagochiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagochiModel.swift; sourceTree = "<group>"; };
 		F6D1A39C288ACC650061399E /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		F6D1A3A1288BF2DE0061399E /* ChoiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -88,10 +88,10 @@
 				F6D1A39A288AA2DA0061399E /* DamagochiModel.swift */,
 				F646007D288A8B2F00862165 /* MainViewController.swift */,
 				F6D1A39C288ACC650061399E /* TextField+Extension.swift */,
-				F66E57E7288C2DDA00F45AA0 /* TestTableViewController.swift */,
-				F66E57E9288C2FBF00F45AA0 /* SettingTableViewCell1.swift */,
-				F66E57EB288C2FC700F45AA0 /* SettingTableViewCell2.swift */,
-				F66E57ED288C2FD000F45AA0 /* SettingTableViewCell3.swift */,
+				F66E57EF288C3B5F00F45AA0 /* SettingTableViewController.swift */,
+				F66E57F1288C3C6B00F45AA0 /* SettingTableViewCell.swift */,
+				F66E57F3288C416A00F45AA0 /* SettingTableViewCell2.swift */,
+				F66E57F5288C417200F45AA0 /* SettingTableViewCell3.swift */,
 				F6460081288A8C3900862165 /* SettingViewController.swift */,
 				F6460079288A899400862165 /* ChoiceCollectionViewController.swift */,
 				F6D1A3A1288BF2DE0061399E /* ChoiceCollectionViewCell.swift */,
@@ -184,19 +184,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F66E57F2288C3C6B00F45AA0 /* SettingTableViewCell.swift in Sources */,
 				F6D1A39D288ACC650061399E /* TextField+Extension.swift in Sources */,
 				F646007A288A899400862165 /* ChoiceCollectionViewController.swift in Sources */,
-				F66E57EA288C2FBF00F45AA0 /* SettingTableViewCell1.swift in Sources */,
 				F6D1A3A2288BF2DE0061399E /* ChoiceCollectionViewCell.swift in Sources */,
-				F66E57EE288C2FD000F45AA0 /* SettingTableViewCell3.swift in Sources */,
+				F66E57F6288C417200F45AA0 /* SettingTableViewCell3.swift in Sources */,
 				F6460066288A7CEE00862165 /* AppDelegate.swift in Sources */,
-				F66E57EC288C2FC700F45AA0 /* SettingTableViewCell2.swift in Sources */,
+				F66E57F4288C416A00F45AA0 /* SettingTableViewCell2.swift in Sources */,
+				F66E57F0288C3B5F00F45AA0 /* SettingTableViewController.swift in Sources */,
 				F646007C288A89BC00862165 /* ChoicePopupViewController.swift in Sources */,
 				F6460068288A7CEE00862165 /* SceneDelegate.swift in Sources */,
 				F6D1A39B288AA2DA0061399E /* DamagochiModel.swift in Sources */,
 				F6460082288A8C3900862165 /* SettingViewController.swift in Sources */,
 				F646007E288A8B2F00862165 /* MainViewController.swift in Sources */,
-				F66E57E8288C2DDA00F45AA0 /* TestTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +351,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,6 +380,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
