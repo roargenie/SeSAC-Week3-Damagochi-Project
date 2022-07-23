@@ -36,12 +36,26 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "\(Damagochi.userName)님의 다마고치"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(personButtonTapped))
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        
+        
         riceTextField.delegate = self
         waterTextField.delegate = self
         
 
         configureUI()
            
+    }
+    
+    @objc func personButtonTapped() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: TestTableViewController.identifier) as? TestTableViewController else { return }
+        
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     func configureUI() {
