@@ -7,9 +7,15 @@ class SettingTableViewController: UITableViewController {
     
     static let identifier = "SettingTableViewController"
     
+    var damagochiDatas = DamagochiInfo()
     
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,16 +67,40 @@ class SettingTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if indexPath.row == 0 {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             guard let vc = sb.instantiateViewController(withIdentifier: SettingViewController.identifier) as? SettingViewController else { return }
             
             self.navigationController?.pushViewController(vc, animated: true)
             
+        } else if indexPath.row == 1 {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            guard let vc = sb.instantiateViewController(withIdentifier: ChoiceCollectionViewController.identifier) as? ChoiceCollectionViewController else { return }
+            
+            vc.navigationController?.title = "다마고치 변경하기"
+            
+            
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        
+        } else if indexPath.row == 2 {
+            
+            
+            
+            
         }
         
         
     }
-
-   
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            
+        }
+        
+    }
+    
+    
+    
 }

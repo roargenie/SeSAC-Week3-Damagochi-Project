@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z4j-5H-40g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sl5-98-SSt">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -375,7 +375,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="buttonTapped:" destination="i5l-VI-gAr" eventType="touchUpInside" id="5Ng-Ec-N2u"/>
+                                                            <action selector="buttonTapped:" destination="i5l-VI-gAr" eventType="touchUpInside" id="fcp-5j-VMh"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -400,7 +400,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="buttonTapped:" destination="i5l-VI-gAr" eventType="touchUpInside" id="oct-nO-h3e"/>
+                                                            <action selector="buttonTapped:" destination="i5l-VI-gAr" eventType="touchUpInside" id="zMp-Up-ADS"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

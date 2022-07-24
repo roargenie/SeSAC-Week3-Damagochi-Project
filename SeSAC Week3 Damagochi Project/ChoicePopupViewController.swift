@@ -58,11 +58,28 @@ class ChoicePopupViewController: UIViewController {
         aceptButton.titleLabel?.font = .boldSystemFont(ofSize: 15)
         aceptButton.tag = 1
         
-        cancelButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        
+        cancelButton.addTarget(self, action: #selector(cancelbuttonTapped), for: .touchUpInside)
+        aceptButton.addTarget(self, action: #selector(aceptButtonTapped), for: .touchUpInside)
     }
-    @objc func buttonTapped() {
+    @objc func cancelbuttonTapped() {
         self.dismiss(animated: true)
+    }
+    
+    @objc func aceptButtonTapped() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
+        
+        vc.damagochiData = damagochiDatas
+        
+        let nav = UINavigationController(rootViewController: vc)
+        
+        
+        sceneDelegate?.window?.rootViewController = nav
+        sceneDelegate?.window?.makeKeyAndVisible()
+        
     }
     
     

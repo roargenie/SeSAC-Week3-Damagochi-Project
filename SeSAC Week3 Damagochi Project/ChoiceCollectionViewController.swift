@@ -5,16 +5,11 @@ import UIKit
 
 class ChoiceCollectionViewController: UICollectionViewController {
     
+    static let identifier = "ChoiceCollectionViewController"
+    
     var damagochiData = DamagochiInfo()
     
-    
-    
-    
-    
-    
-    
-    
-    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,16 +66,12 @@ extension ChoiceCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
-        
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         guard let vc = sb.instantiateViewController(withIdentifier: ChoicePopupViewController.identifier) as? ChoicePopupViewController else { return }
         
         let data = damagochiData.damagochi[indexPath.row]
         vc.damagochiDatas = data
-        
-
         
         let nav = UINavigationController(rootViewController: vc)
         

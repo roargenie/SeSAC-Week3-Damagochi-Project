@@ -3,11 +3,13 @@
 import UIKit
 import Toast
 
+
+
 class MainViewController: UIViewController {
     
     static var identifier = "MainViewController"
     
-    var damagochiData = DamagochiInfo()
+    var damagochiData: Damagochi?
     
     var level = Damagochi.level
     var exp = Damagochi.exp
@@ -34,12 +36,29 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var waterButton: UIButton!
     
+    var balloonWords = [
+        "\(Damagochi.userName)님 오늘은 깃허브 푸쉬하셨어용??", "테이블뷰와 컬렉션뷰의 차이는 무엇일까요??", "아직 배가 고파용!!", "\(Damagochi.userName)님 오늘 과제는 하셨어용??", "복습은 잘 하고계시죵??", "코딩이 쉽지않죵??"
+    ]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "\(Damagochi.userName)님의 다마고치"
+       
+    }
+    
+    override func loadView() {
+        super.loadView()
+        textLabel.text = balloonWords.randomElement()
+        self.title = "\(Damagochi.userName)님의 다마고치"
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         mainSubView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        self.title = "\(Damagochi.userName)님의 다마고치"
+        
+        
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -88,6 +107,7 @@ class MainViewController: UIViewController {
         textLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         textLabel.font = .boldSystemFont(ofSize: 14)
         textLabel.numberOfLines = 0
+        textLabel.text = "안녕하세요! \(Damagochi.userName)님 반가워용!"
         
         riceTextField.placeholder = "밥주세용"
         riceTextField.textAlignment = .center
@@ -109,10 +129,11 @@ class MainViewController: UIViewController {
     
     func configureUI() {
         
-        textLabel.text = damagochiData.damagochi[0].introduce
-        damagochiImage.image = damagochiData.damagochi[0].image
-        damagochiNameLabel.text = damagochiData.damagochi[0].name
+        //textLabel.text =
+        damagochiImage.image = damagochiData?.image
+        damagochiNameLabel.text = damagochiData?.name
         descriptionLabel.text = "LV\(level) • 밥알\(rice)개 • 물방울\(water)"
+        
         
     }
     
@@ -121,29 +142,35 @@ class MainViewController: UIViewController {
         let result = ((Double(rice) / 5.0 + Double(water) / 2.0).rounded(.down)) / 10
         level = Int(result)
         
+        
         switch sender.tag {
-                    // 스위치문으로 level당 케이스 지정해서 열거하는게 더 정확할것 같음. 바꿔야 함.⭐️
+                    // 스위치문으로 level당 케이스 지정해서 열거하는게 더 정확할것 같음.⭐️
+                    // 이미지가 왜 안바뀔까.........................
         case 0:
-            if riceTextField.text == nil {
-                rice += 1
-            }
+//            if riceTextField.text == nil {
+//                rice += 1
+//            }
+            
             if let riceCount = Int(riceTextField.text!) {
                 if riceCount < 100 {
                     rice += riceCount
                     
                     if level <= 10 && level >= 1 {
                         descriptionLabel.text = "LV\(Int(result)) • 밥알\(rice)개 • 물방울\(water)개"
+                        print(level)
+                        damagochiImage.image = damagochiData?.image
                         
-                        damagochiImage.image = UIImage(named: "1-\(level)")
-                    } else if result > 10 {
-                        view.makeToast("더 이상 자라면 안돼요!", duration: 1, position: .center)
+                    } else if level > 10 {
+                        textLabel.text = "저는 이제 다 자랐어용!! 키워주셔서 감사합니당!"
+                        //view.makeToast("더 이상 자라면 안돼요!", duration: 1, position: .center)
                     } else {
                         descriptionLabel.text = "LV1 • 밥알\(rice)개 • 물방울\(water)개"
                     }
                 } else {
-                    
+                    textLabel.text = "배가 터질거 가타요ㅠㅁㅠ"
                     view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
                 }
+                
             }
         case 1:
 
@@ -154,18 +181,25 @@ class MainViewController: UIViewController {
                     if level <= 10 && level >= 1 {
                         descriptionLabel.text = "LV\(Int(result)) • 밥알\(rice)개 • 물방울\(water)개"
                         
-                        damagochiImage.image = UIImage(named: "1-\(level)")
+                        damagochiImage.image = damagochiData?.image
                     } else if result > 10 {
-                        view.makeToast("더 이상 자라면 안돼요!", duration: 1, position: .center)
+                        textLabel.text = "저는 이제 다 자랐어용!! 키워주셔서 감사합니당!"
+                        //view.makeToast("더 이상 자라면 안돼요!", duration: 1, position: .center)
                     } else {
                         descriptionLabel.text = "LV1 • 밥알\(rice)개 • 물방울\(water)개"
                     }
                 } else {
-                    
+                    textLabel.text = "배가 터질거 가타요ㅠㅁㅠ"
                     view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
                 }
+                
             }
         default:
+            if riceTextField.text == nil {
+                rice += 1
+            } else if waterTextField.text == nil {
+                water += 1
+            }
             break
         }
 
@@ -187,7 +221,7 @@ class MainViewController: UIViewController {
         waterTextField.layer.addSublayer(bottomLine2)
     }
     
-    
+
 
 }
 
