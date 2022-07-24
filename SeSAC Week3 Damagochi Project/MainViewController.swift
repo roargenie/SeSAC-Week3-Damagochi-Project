@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "\(Damagochi.userName)님의 다마고치"
-       
+        
     }
     
     override func loadView() {
@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         mainSubView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
-        
+        UserDefaults.standard.object(forKey: "Saved")
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -141,24 +141,23 @@ class MainViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         let result = ((Double(rice) / 5.0 + Double(water) / 2.0).rounded(.down)) / 10
         level = Int(result)
-        
+        print("눌렸습니다")
+        textLabel.text = balloonWords.randomElement()
         
         switch sender.tag {
                     // 스위치문으로 level당 케이스 지정해서 열거하는게 더 정확할것 같음.⭐️
                     // 이미지가 왜 안바뀔까.........................
         case 0:
-//            if riceTextField.text == nil {
-//                rice += 1
-//            }
             
             if let riceCount = Int(riceTextField.text!) {
                 if riceCount < 100 {
                     rice += riceCount
                     
                     if level <= 10 && level >= 1 {
-                        descriptionLabel.text = "LV\(Int(result)) • 밥알\(rice)개 • 물방울\(water)개"
+                        descriptionLabel.text = "LV\(level) • 밥알\(rice)개 • 물방울\(water)개"
                         print(level)
                         damagochiImage.image = damagochiData?.image
+                        // 타입 저장속성으로 선언해놓은 Damagochi.level 변하지가 않음.
                         
                     } else if level > 10 {
                         textLabel.text = "저는 이제 다 자랐어용!! 키워주셔서 감사합니당!"
@@ -179,7 +178,7 @@ class MainViewController: UIViewController {
                     water += waterCount
                     
                     if level <= 10 && level >= 1 {
-                        descriptionLabel.text = "LV\(Int(result)) • 밥알\(rice)개 • 물방울\(water)개"
+                        descriptionLabel.text = "LV\(level) • 밥알\(rice)개 • 물방울\(water)개"
                         
                         damagochiImage.image = damagochiData?.image
                     } else if result > 10 {
@@ -195,11 +194,6 @@ class MainViewController: UIViewController {
                 
             }
         default:
-            if riceTextField.text == nil {
-                rice += 1
-            } else if waterTextField.text == nil {
-                water += 1
-            }
             break
         }
 

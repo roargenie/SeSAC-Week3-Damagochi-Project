@@ -27,7 +27,7 @@ struct Damagochi {
     var description: [String] = []
     static var rice: Int = 0
     static var water: Int = 0
-    static var level: Int = 5
+    static var level: Int = 1
     
     static var exp: Double {
         get {
@@ -45,6 +45,7 @@ struct Damagochi {
 
 
 struct DamagochiInfo {
+    
     
     var damagochi: [Damagochi] = [
         
