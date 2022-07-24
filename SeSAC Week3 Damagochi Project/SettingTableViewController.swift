@@ -13,7 +13,7 @@ class SettingTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        //tableView.reloadData()
         
     }
     
@@ -79,15 +79,30 @@ class SettingTableViewController: UITableViewController {
             guard let vc = sb.instantiateViewController(withIdentifier: ChoiceCollectionViewController.identifier) as? ChoiceCollectionViewController else { return }
             
             vc.navigationController?.title = "다마고치 변경하기"
-            
-            
-            
             self.navigationController?.pushViewController(vc, animated: true)
         
         } else if indexPath.row == 2 {
+            let alert = UIAlertController(title: "데이터 초기화", message: "정말 처음부터 다시 시작하실 건가용?", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "웅", style: .default) {  [self] button in
+                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                let sceneDelegate = windowScene?.delegate as? SceneDelegate
+                
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                guard let vc = sb.instantiateViewController(withIdentifier: ChoiceCollectionViewController.identifier) as? ChoiceCollectionViewController else { return }
+                
+                vc.damagochiData = damagochiDatas
+                
+                
+                let nav = UINavigationController(rootViewController: vc)
+                sceneDelegate?.window?.rootViewController = nav
+                sceneDelegate?.window?.makeKeyAndVisible()
+                   
+            }
             
-            
-            
+            let cancel = UIAlertAction(title: "아냐!", style: .cancel)
+            alert.addAction(cancel)
+            alert.addAction(ok)
+            present(alert, animated: true)
             
         }
         

@@ -29,16 +29,16 @@ struct Damagochi {
     static var water: Int = 0
     static var level: Int = 1
     
-    static var exp: Double {
-        get {
-            let rice = Double(rice) / Double(5)
-            let water = Double(water) / Double(2)
-            
-            let result = rice + water
-            return result
-            
-        }
-    }
+//    static var exp: Int {
+//        get {
+//            let rice = Double(rice) / Double(5)
+//            let water = Double(water) / Double(2)
+//
+//            let result = (rice + water) / 10
+//            return Int(result)
+//
+//        }
+//    }
     
    
 }

@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     var damagochiData: Damagochi?
     
     var level = Damagochi.level
-    var exp = Damagochi.exp
+    //var exp = Damagochi.exp
     var rice = Damagochi.rice
     var water = Damagochi.water
     
@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         mainSubView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
-        UserDefaults.standard.object(forKey: "Saved")
+        
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -157,7 +157,7 @@ class MainViewController: UIViewController {
                         descriptionLabel.text = "LV\(level) • 밥알\(rice)개 • 물방울\(water)개"
                         print(level)
                         damagochiImage.image = damagochiData?.image
-                        // 타입 저장속성으로 선언해놓은 Damagochi.level 변하지가 않음.
+                        // 타입 저장속성으로 선언해놓은 Damagochi.level이 변하지가 않음.
                         
                     } else if level > 10 {
                         textLabel.text = "저는 이제 다 자랐어용!! 키워주셔서 감사합니당!"

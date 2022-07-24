@@ -10,12 +10,17 @@ class ChoiceCollectionViewController: UICollectionViewController {
     var damagochiData = DamagochiInfo()
     
    
+    override func viewWillAppear(_ animated: Bool) {
+        //view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "다마고치 선택하기"
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        
         
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 8
