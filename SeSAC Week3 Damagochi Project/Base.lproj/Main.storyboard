@@ -375,7 +375,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="buttonTapped:" destination="i5l-VI-gAr" eventType="touchUpInside" id="fcp-5j-VMh"/>
+                                                            <action selector="riceButtonTapped:" destination="i5l-VI-gAr" eventType="touchUpInside" id="ES6-qc-Bij"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -400,7 +400,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="buttonTapped:" destination="i5l-VI-gAr" eventType="touchUpInside" id="zMp-Up-ADS"/>
+                                                            <action selector="waterButtonTapped:" destination="i5l-VI-gAr" eventType="touchUpInside" id="flP-i3-rdM"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -492,9 +492,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.96078431372549022" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <navigationBarAppearance key="standardAppearance"/>
-                        <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.96078431372549022" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
-                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

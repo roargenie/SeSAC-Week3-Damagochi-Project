@@ -23,7 +23,7 @@ class ChoiceCollectionViewController: UICollectionViewController {
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
         let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 8
+        let spacing: CGFloat = 16
         let width = (UIScreen.main.bounds.width - (spacing * 4)) / 3
         
         layout.itemSize = CGSize(width: width, height: width * 1.2)

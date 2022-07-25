@@ -61,6 +61,7 @@ class ChoicePopupViewController: UIViewController {
         cancelButton.addTarget(self, action: #selector(cancelbuttonTapped), for: .touchUpInside)
         aceptButton.addTarget(self, action: #selector(aceptButtonTapped), for: .touchUpInside)
     }
+    
     @objc func cancelbuttonTapped() {
         self.dismiss(animated: true)
     }
@@ -75,7 +76,6 @@ class ChoicePopupViewController: UIViewController {
         vc.damagochiData = damagochiDatas
         
         let nav = UINavigationController(rootViewController: vc)
-        
         
         sceneDelegate?.window?.rootViewController = nav
         sceneDelegate?.window?.makeKeyAndVisible()

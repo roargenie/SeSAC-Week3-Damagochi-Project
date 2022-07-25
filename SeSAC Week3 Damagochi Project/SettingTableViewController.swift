@@ -72,13 +72,16 @@ class SettingTableViewController: UITableViewController {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             guard let vc = sb.instantiateViewController(withIdentifier: SettingViewController.identifier) as? SettingViewController else { return }
             
+            
             self.navigationController?.pushViewController(vc, animated: true)
             
         } else if indexPath.row == 1 {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             guard let vc = sb.instantiateViewController(withIdentifier: ChoiceCollectionViewController.identifier) as? ChoiceCollectionViewController else { return }
             
+            vc.damagochiData = damagochiDatas
             vc.navigationController?.title = "다마고치 변경하기"
+            
             self.navigationController?.pushViewController(vc, animated: true)
         
         } else if indexPath.row == 2 {
