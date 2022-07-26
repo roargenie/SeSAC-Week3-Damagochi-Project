@@ -47,14 +47,11 @@ class MainViewController: UIViewController {
 //        textLabel.text = balloonWords.randomElement()
 //        self.title = "\(Damagochi.userName)님의 다마고치"
 //    }
-//
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         mainSubView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        
-        
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -66,7 +63,6 @@ class MainViewController: UIViewController {
         
         self.navigationController?.navigationBar.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(personButtonTapped))
-        
         
         riceTextField.delegate = self
         waterTextField.delegate = self
@@ -112,8 +108,6 @@ class MainViewController: UIViewController {
          
     }
     
-    
-    
     @objc func personButtonTapped() {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.identifier) as? SettingTableViewController else { return }
@@ -129,7 +123,6 @@ class MainViewController: UIViewController {
         damagochiImage.image = UIImage(named: damagochiData!.mainImage)
         damagochiNameLabel.text = damagochiData?.name
         descriptionLabel.text = damagochiData?.description
-        
         
     }
     
@@ -167,7 +160,7 @@ class MainViewController: UIViewController {
         
         if damagochiData!.level < 10 && damagochiData!.level > 0 {
             if let waterCount = Int(waterTextField.text!) {
-                if waterCount < 100 {
+                if waterCount < 50 {
                     damagochiData?.water += waterCount
                     descriptionLabel.text = damagochiData?.description
                     damagochiImage.image = UIImage(named: damagochiData!.mainImage)
@@ -179,7 +172,7 @@ class MainViewController: UIViewController {
             }
         } else if damagochiData!.level >= 10 {
             if let waterCount = Int(waterTextField.text!) {
-                if waterCount < 100 {
+                if waterCount < 50 {
                     damagochiData?.water += waterCount
                     descriptionLabel.text = damagochiData?.description
                     damagochiImage.image = UIImage(named: damagochiData!.mainImage)
