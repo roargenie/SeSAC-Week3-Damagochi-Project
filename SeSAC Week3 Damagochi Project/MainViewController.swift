@@ -10,9 +10,7 @@ class MainViewController: UIViewController {
     static var identifier = "MainViewController"
     
     var damagochiData: Damagochi?
-    
-
-    
+     
     @IBOutlet weak var mainSubView: UIView!
     
     @IBOutlet weak var textImage: UIImageView!
@@ -34,7 +32,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var waterButton: UIButton!
     
     var balloonWords = [
-        "\(Damagochi.userName)님 오늘은 깃허브 푸쉬하셨어용??", "테이블뷰와 컬렉션뷰의 차이는 무엇일까요??", "아직 배가 고파용!!", "\(Damagochi.userName)님 오늘 과제는 하셨어용??", "복습은 잘 하고계시죵??", "코딩이 쉽지않죵??"
+        "\(Damagochi.userName)님 오늘은 깃허브 푸쉬하셨어용??", "테이블뷰와 컬렉션뷰의 차이는 무엇일까요??", "아직 배가 고파용!!", "\(Damagochi.userName)님 오늘 과제는 하셨어용??", "복습은 잘 하고계시죵??", "코딩이 쉽지않죵??", "식사는 하셨나용?", "저는 잘 자라고 있습니당!"
     ]
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,120 +128,72 @@ class MainViewController: UIViewController {
         //textLabel.text =
         damagochiImage.image = UIImage(named: damagochiData!.mainImage)
         damagochiNameLabel.text = damagochiData?.name
-        descriptionLabel.text = "LV\(damagochiData!.level) • 밥알\(damagochiData!.rice)개 • 물방울\(damagochiData!.water)"
+        descriptionLabel.text = damagochiData?.description
         
         
     }
     
     @IBAction func riceButtonTapped(_ sender: UIButton) {
-        //let result = ((Double(Damagochi.rice) / 5.0 + Double(Damagochi.water) / 2.0).rounded(.down)) / 10
-        // Damagochi.level = Int(result)
-        //print(Damagochi.level)
         
-        if let riceCount = Int(riceTextField.text!) {
-            if riceCount < 100 {
-                damagochiData?.rice += riceCount
-                descriptionLabel.text = "LV\(damagochiData!.level) • 밥알\(damagochiData!.rice)개 • 물방울\(damagochiData!.water)개"
-                damagochiImage.image = UIImage(named: damagochiData!.mainImage)
-                //textLabel.text = "저는 이제 다 자랐어용!! 키워주셔서 감사합니당!"
-                //textLabel.text = "배가 터질거 가타요ㅠㅁㅠ"
-                
-            } else {
-                view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
+        if damagochiData!.level < 10 && damagochiData!.level > 0 {
+            if let riceCount = Int(riceTextField.text!) {
+                if riceCount < 100 {
+                    damagochiData?.rice += riceCount
+                    descriptionLabel.text = damagochiData?.description
+                    damagochiImage.image = UIImage(named: damagochiData!.mainImage)
+                    textLabel.text = balloonWords.randomElement()
+                } else {
+                    textLabel.text = "배가 터질거 가타요ㅠㅁㅠ"
+                    view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
+                }
+            }
+        } else if damagochiData!.level >= 10 {
+            if let riceCount = Int(riceTextField.text!) {
+                if riceCount < 100 {
+                    damagochiData?.rice += riceCount
+                    descriptionLabel.text = damagochiData?.description
+                    damagochiImage.image = UIImage(named: damagochiData!.mainImage)
+                    textLabel.text = "저는 이제 다 자랐어용!! 키워주셔서 감사합니당!"
+                } else {
+                    textLabel.text = "배가 터질거 가타요ㅠㅁㅠ"
+                    view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
+                }
             }
         }
+        
     }
     
-    
-//    @IBAction func waterButtonTapped(_ sender: UIButton) {
-////        let result = ((Double(Damagochi.rice) / 5.0 + Double(Damagochi.water) / 2.0).rounded(.down)) / 10
-////        Damagochi.level = Int(result)
-//
-//        if let waterCount = Int(waterTextField.text!) {
-//            if waterCount < 50 {
-//                Damagochi.water += waterCount
-//
-//                if Damagochi.level <= 10 && Damagochi.level >= 1 {
-//                    descriptionLabel.text = "LV\(Damagochi.level) • 밥알\(Damagochi.rice)개 • 물방울\(Damagochi.water)개"
-//
-//                    damagochiImage.image = damagochiData?.image
-//                } else if result > 10 {
-//                    textLabel.text = "저는 이제 다 자랐어용!! 키워주셔서 감사합니당!"
-//                    //view.makeToast("더 이상 자라면 안돼요!", duration: 1, position: .center)
-//                } else {
-//                    descriptionLabel.text = "LV1 • 밥알\(Damagochi.rice)개 • 물방울\(Damagochi.water)개"
-//                }
-//            } else {
-//                textLabel.text = "배가 터질거 가타요ㅠㅁㅠ"
-//                view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
-//            }
-//
-//        }
-//
-//    }
-    
-    
-//    @IBAction func buttonTapped(_ sender: UIButton) {
-//        let result = ((Double(Damagochi.rice) / 5.0 + Double(Damagochi.water) / 2.0).rounded(.down)) / 10
-//        Damagochi.level = Int(result)
-//        print(Damagochi.level)
-//
-//        switch sender.tag {
-//                    // 스위치문으로 level당 케이스 지정해서 열거하는게 더 정확할것 같음.⭐️
-//                    // 이미지가 왜 안바뀔까.........................
-//        case 0:
-//
-//            if let riceCount = Int(riceTextField.text!) {
-//                if riceCount < 100 {
-//                    Damagochi.rice += riceCount
-//
-//                    if Int(result) <= 10 && Int(result) >= 1 {
-//
-//                        descriptionLabel.text = "LV\(Damagochi.level) • 밥알\(Damagochi.rice)개 • 물방울\(Damagochi.water)개"
-//
-//                        damagochiImage.image = damagochiData?.image
-//                        // 타입 저장속성으로 선언해놓은 Damagochi.level이 변하지가 않음.
-//
-//                    } else if Int(result) > 10 {
-//                        textLabel.text = "저는 이제 다 자랐어용!! 키워주셔서 감사합니당!"
-//                        //view.makeToast("더 이상 자라면 안돼요!", duration: 1, position: .center)
-//                    } else {
-//
-//                        descriptionLabel.text = "LV1 • 밥알\(Damagochi.rice)개 • 물방울\(Damagochi.water)개"
-//                    }
-//                } else {
-//                    textLabel.text = "배가 터질거 가타요ㅠㅁㅠ"
-//                    view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
-//                }
-//
-//            }
-//        case 1:
-//
-//            if let waterCount = Int(waterTextField.text!) {
-//                if waterCount < 50 {
-//                    Damagochi.water += waterCount
-//
-//                    if Damagochi.level <= 10 && Damagochi.level >= 1 {
-//                        descriptionLabel.text = "LV\(Damagochi.level) • 밥알\(Damagochi.rice)개 • 물방울\(Damagochi.water)개"
-//
-//                        damagochiImage.image = damagochiData?.image
-//                    } else if result > 10 {
-//                        textLabel.text = "저는 이제 다 자랐어용!! 키워주셔서 감사합니당!"
-//                        //view.makeToast("더 이상 자라면 안돼요!", duration: 1, position: .center)
-//                    } else {
-//                        descriptionLabel.text = "LV1 • 밥알\(Damagochi.rice)개 • 물방울\(Damagochi.water)개"
-//                    }
-//                } else {
-//                    textLabel.text = "배가 터질거 가타요ㅠㅁㅠ"
-//                    view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
-//                }
-//
-//            }
-//        default:
-//            break
-//        }
-//
-//    }
+    @IBAction func waterButtonTapped(_ sender: UIButton) {
+        
+        if damagochiData!.level < 10 && damagochiData!.level > 0 {
+            if let waterCount = Int(waterTextField.text!) {
+                if waterCount < 100 {
+                    damagochiData?.water += waterCount
+                    descriptionLabel.text = damagochiData?.description
+                    damagochiImage.image = UIImage(named: damagochiData!.mainImage)
+                    textLabel.text = balloonWords.randomElement()
+                } else {
+                    textLabel.text = "배가 터질거 가타요ㅠㅁㅠ"
+                    view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
+                }
+            }
+        } else if damagochiData!.level >= 10 {
+            if let waterCount = Int(waterTextField.text!) {
+                if waterCount < 100 {
+                    damagochiData?.water += waterCount
+                    descriptionLabel.text = damagochiData?.description
+                    damagochiImage.image = UIImage(named: damagochiData!.mainImage)
+                    textLabel.text = "저는 이제 다 자랐어용!! 키워주셔서 감사합니당!"
+                } else {
+                    textLabel.text = "배가 터질거 가타요ㅠㅁㅠ"
+                    view.makeToast("이렇게 많이 먹을수 없어요!", duration: 1, position: .center)
+                }
+            }
+        }
+        
+          
+    }
+
     
     override func viewDidLayoutSubviews() {
         let bottomLine = CALayer()

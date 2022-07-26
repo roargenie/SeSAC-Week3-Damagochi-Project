@@ -15,9 +15,7 @@ class SettingViewController: UIViewController {
         self.title = "\(Damagochi.userName)님의 다마고치"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(rightBarButtonTapped))
         
-        
         nameChangeTextField.placeholder = "변경하실 이름을 입력해주세용!"
-        
         
     }
     

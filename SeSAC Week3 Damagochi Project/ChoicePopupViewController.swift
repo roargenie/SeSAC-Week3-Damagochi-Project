@@ -27,7 +27,7 @@ class ChoicePopupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = damagochiDatas?.name
-        damagochiImage.image = damagochiDatas?.image
+        damagochiImage.image = UIImage(named: damagochiDatas!.collectionImage)
         descriptionLabel.text = damagochiDatas?.introduce
         
         mainView.layer.cornerRadius = 10
@@ -78,7 +78,7 @@ class ChoicePopupViewController: UIViewController {
         let nav = UINavigationController(rootViewController: vc)
         
         sceneDelegate?.window?.rootViewController = nav
-        sceneDelegate?.window?.makeKeyAndVisible()
+        //sceneDelegate?.window?.makeKeyAndVisible()
         
     }
     

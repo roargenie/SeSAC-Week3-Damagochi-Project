@@ -11,16 +11,18 @@ class ChoiceCollectionViewController: UICollectionViewController {
     
    
     override func viewWillAppear(_ animated: Bool) {
-        //view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
     }
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "다마고치 선택하기"
-        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        self.title = "다마고치 선택하기"
+        //view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        self.collectionView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+//        let nav = UINavigationController(rootViewController: self)
+//        nav.title = "다마고치 선택하기"
         
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 16
@@ -36,10 +38,6 @@ class ChoiceCollectionViewController: UICollectionViewController {
         
     }
     
-    
-    
-    
-    
 }
 
 extension ChoiceCollectionViewController {
@@ -48,13 +46,13 @@ extension ChoiceCollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChoiceCollectionViewCell.identifier, for: indexPath) as? ChoiceCollectionViewCell else {
             return UICollectionViewCell()
         }
+        
         let data = damagochiData.damagochi[indexPath.row]
-        
-        cell.damagochiImage.image = data.image
-        cell.damagochiImage.contentMode = .scaleAspectFit
-        
-        
+
+        cell.damagochiImage.image = UIImage(named: data.collectionImage)
         cell.nameLabel.text = data.name
+        
+        cell.damagochiImage.contentMode = .scaleAspectFit
         cell.nameLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         cell.nameLabel.textAlignment = .center
         cell.nameLabel.font = .boldSystemFont(ofSize: 14)
@@ -72,17 +70,15 @@ extension ChoiceCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        
         guard let vc = sb.instantiateViewController(withIdentifier: ChoicePopupViewController.identifier) as? ChoicePopupViewController else { return }
-        
         let data = damagochiData.damagochi[indexPath.row]
         vc.damagochiDatas = data
         
-        let nav = UINavigationController(rootViewController: vc)
+        //let nav = UINavigationController(rootViewController: vc)
+        vc.modalPresentationStyle = .overCurrentContext
         
-        nav.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true)
         
-        self.present(nav, animated: true)
     }
     
     

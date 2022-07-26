@@ -9,8 +9,6 @@ class SettingTableViewController: UITableViewController {
     
     var damagochiDatas = DamagochiInfo()
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //tableView.reloadData()
@@ -72,7 +70,6 @@ class SettingTableViewController: UITableViewController {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             guard let vc = sb.instantiateViewController(withIdentifier: SettingViewController.identifier) as? SettingViewController else { return }
             
-            
             self.navigationController?.pushViewController(vc, animated: true)
             
         } else if indexPath.row == 1 {
@@ -80,8 +77,10 @@ class SettingTableViewController: UITableViewController {
             guard let vc = sb.instantiateViewController(withIdentifier: ChoiceCollectionViewController.identifier) as? ChoiceCollectionViewController else { return }
             
             vc.damagochiData = damagochiDatas
-            vc.navigationController?.title = "다마고치 변경하기"
+            //vc.navigationController?.title = "다마고치 변경하기"
             
+            // 컬렉션뷰 화면 네비 왼쪽 바버튼 아이템 안보임. 누르면 팝은 됨.✅
+            // 다마고치 변경하기로 넘어가서 돌아오면 다른 푸쉬 뷰들도 네비아이템이 안보임. 기능만됨.
             self.navigationController?.pushViewController(vc, animated: true)
         
         } else if indexPath.row == 2 {
@@ -92,11 +91,10 @@ class SettingTableViewController: UITableViewController {
                 
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 guard let vc = sb.instantiateViewController(withIdentifier: ChoiceCollectionViewController.identifier) as? ChoiceCollectionViewController else { return }
+                let nav = UINavigationController(rootViewController: vc)
                 
                 vc.damagochiData = damagochiDatas
                 
-                
-                let nav = UINavigationController(rootViewController: vc)
                 sceneDelegate?.window?.rootViewController = nav
                 sceneDelegate?.window?.makeKeyAndVisible()
                    
