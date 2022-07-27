@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var waterButton: UIButton!
     
+    
     var balloonWords = [
         "\(Damagochi.userName)님 오늘은 깃허브 푸쉬하셨어용??", "테이블뷰와 컬렉션뷰의 차이는 무엇일까요??", "아직 배가 고파용!!", "\(Damagochi.userName)님 오늘 과제는 하셨어용??", "복습은 잘 하고계시죵??", "코딩이 쉽지않죵??", "식사는 하셨나용?", "저는 잘 자라고 있습니당!"
     ]
@@ -111,15 +112,13 @@ class MainViewController: UIViewController {
     @objc func personButtonTapped() {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.identifier) as? SettingTableViewController else { return }
-        
-        
+       
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
     func configureUI() {
         
-        //textLabel.text =
         damagochiImage.image = UIImage(named: damagochiData!.mainImage)
         damagochiNameLabel.text = damagochiData?.name
         descriptionLabel.text = damagochiData?.description
@@ -153,6 +152,7 @@ class MainViewController: UIViewController {
                 }
             }
         }
+        
         
     }
     
@@ -203,9 +203,7 @@ class MainViewController: UIViewController {
         waterTextField.borderStyle = .none
         waterTextField.layer.addSublayer(bottomLine2)
     }
-    
-
-
+  
 }
 
 extension MainViewController: UITextFieldDelegate {
